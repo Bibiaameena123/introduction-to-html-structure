@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/dell/Desktop/Ultiaamu/position.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        div.static{
+            position: static;
+            border: 3px solid black;
+        }
+        div.relative{
+            position:relative;
+            border: 3px solid black;
+            left: 20px;
+        }
+        div.fixed{
+            position: fixed;
+            border: 3px solid black;
+            right: 0px;
+            bottom: 0px;
+            width: 300px;
+        }
+        div.absolute_ancestor{
+            position:relative;
+            border: 3px solid black;
+            width: 400px;
+            height: 200px;
+        }
+        div.absolute{
+            position: absolute;
+            border: 3px solid black;
+            width: 200px;
+            height: 100px;
+            top: 80px;
+            right: 0px;
+        }
+        div.sticky{
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            background-color: aqua;
+            border: 3px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Position Property</h1>
+    <div class="static">
+        This is an example for Static.
+    </div>
+
+    <h2>2nd Position Property</h2>
+    <div class="relative">
+        This is an example for relative.
+    </div>
+
+    <h2> 3rd Position Property</h2>
+    <div class="fixed">
+        This is an example for fixed.
+    </div>
+
+    <h2> 4th Position Property</h2>
+    <div class="absolute_ancestor">
+        This is an example for relative.
+        <div class="absolute">
+             This is example for absolute</div>
+            </div>
+   
+   
+             <h2>5th Position Property</h2>
+    <div class="sticky">
+            This is an example for sticky.
+    </div>
+    <p style="font-size: 30px; padding-bottom: 800px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolore consectetur minima earum perferendis sed aspernatur rerum, nisi perspiciatis placeat est corporis. Corporis fugiat laboriosam adipisci aperiam velit quibusdam dignissimos.</p>
+  
+   
+
+</body></html>
