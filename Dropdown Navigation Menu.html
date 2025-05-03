@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Navigation Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: #333;
+    }
+
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .menu > li {
+      position: relative;
+    }
+
+    .menu > li > a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu > li:hover,
+    .menu > li:focus-within {
+      background-color: #444;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #555;
+      min-width: 180px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .submenu li a:hover {
+      background-color: #666;
+    }
+
+    .menu > li:hover .submenu,
+    .menu > li.show .submenu {
+      display: block;
+    }
+
+    /* Mobile click support */
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#">Home</a></li>
+      <li class="">
+        <a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#" onclick="toggleSubmenu(event)">Services</a>
+        <ul class="submenu">
+          <li><a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#">Web Design</a></li>
+          <li><a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#">SEO</a></li>
+          <li><a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#">Marketing</a></li>
+        </ul>
+      </li>
+      <li class="">
+        <a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#" onclick="toggleSubmenu(event)">About</a>
+        <ul class="submenu">
+          <li><a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#">Team</a></li>
+          <li><a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#">Careers</a></li>
+        </ul>
+      </li>
+      <li><a href="file:///C:/Users/dell/Desktop/Ultiaamu/dropdownmenu.html#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    function toggleSubmenu(event) {
+      event.preventDefault();
+      const parent = event.target.closest('li');
+      parent.classList.toggle('show');
+
+      // Close other submenus
+      document.querySelectorAll('.menu > li').forEach(li => {
+        if (li !== parent) li.classList.remove('show');
+      });
+    }
+
+    // Close submenu when clicking outside
+    document.addEventListener('click', function (e) {
+      const nav = document.querySelector('nav');
+      if (!nav.contains(e.target)) {
+        document.querySelectorAll('.menu > li').forEach(li => li.classList.remove('show'));
+      }
+    });
+  </script>
+
+
+
+</body></html>
