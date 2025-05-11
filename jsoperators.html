@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators</title>
+</head>
+<body>
+    <h2>operator in  js prgm</h2>
+    <button type="button" onclick="calculateAge(birthYear, currentYear)">Click me</button>
+    <script>
+    
+    function calculateAge(birthYear, currentYear) {
+        // Convert inputs to numbers
+        const birth = Number(birthYear);
+        const current = Number(currentYear);
+      
+        // Check if inputs are valid numbers and not NaN
+        if (isNaN(birth) || isNaN(current)) {
+          return "Invalid input. Please enter valid numbers for birth year and current year.";
+        }
+      
+        const age = current - birth;
+      
+        // Check if age is negative
+        if (age < 0) {
+          return "Invalid input. Birth year cannot be after current year.";
+        }
+      
+        return `You are ${age} years old.`;
+      }
+      
+      // Test cases
+      console.log(calculateAge(1990, 2024));          // Valid
+      console.log(calculateAge(2000, 1995));          // Invalid age (negative)
+      console.log(calculateAge(1995, "2024"));        // Valid
+      console.log(calculateAge("1995", 2024));        // Valid
+      console.log(calculateAge("abcd", "xyz"));       // Invalid
+    </script>
+      
+</body>
+</html>
+
+
+
+
+
+
+
+
+
