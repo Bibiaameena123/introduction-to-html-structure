@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)file:///E:/aameenaUjs/TaskOnJs.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Array Operations in JavaScript</title>
+</head>
+<body>
+  <h1>Check the Console for Output</h1>
+    
+
+  <script>
+    // 1. Initialize an array named numbers
+    let numbers = [10, 5, 8, 3, 12, 6];
+    console.log("Initial array:", numbers);
+
+    // 2. Print the length of the array to the console
+    console.log("Length of the array:", numbers.length);
+
+    // 3. Add the number 7 to the end of the array
+    numbers.push(7);
+    console.log("After adding 7:", numbers);
+
+    // 4. Remove the first element of the array
+    numbers.shift();
+    console.log("After removing first element:", numbers);
+
+    // 5. Sort the array in ascending order
+    numbers.sort((a, b) => a - b);
+    console.log("Sorted array:", numbers);
+
+    // 6. Reverse the array
+    numbers.reverse();
+    console.log("Reversed array:", numbers);
+
+    // 7. Check if the number 8 exists in the array
+    if (numbers.includes(8)) {
+      console.log("Number 8 exists");
+    } else {
+      console.log("Number 8 doesn't exist");
+    }
+
+    // 8. Find the index of the number 12 in the array and print it
+    let index = numbers.indexOf(12);
+    console.log("Index of number 12:", index);
+
+    // 9. Create a new array named doubledNumbers
+    let doubledNumbers = numbers.map(num => num * 2);
+
+    // 10. Print the doubledNumbers array to the console
+    console.log("Doubled numbers array:", doubledNumbers);
+  </script>
+
+
+</body></html>
