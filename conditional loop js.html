@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)file:///E:/aameenaUjs/conditional.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditional loop js</title>
+</head>
+<body>
+    <h2>Conditional loops javascript</h2>
+    <p id="demo"></p>
+    <button type="button" onclick="myFunc()">click me</button>
+
+    <script>
+        function myFunc(){
+            //if 
+            let num=10;
+            if(num>0)
+        {
+            console.log("num is positive")
+        }
+
+        //ELSE IF 
+         let num2=10;
+            if(num2>90)
+        {
+            console.log("num is positive")
+        }  else 
+            
+            {
+                console.log("num is negative")
+            }
+
+            //if else if else
+
+             let num3=10;
+            if(num3>0)
+          {
+            console.log("num is positive")
+          } else if(num3==0)
+            
+            {
+                console.log("num is zero")
+            } 
+            else{
+                console.log("num is negative")
+            }
+
+            //switch
+            let day="monday"
+            switch(day){
+                case "monday" :
+                    console.log("today is monday")
+                    break
+                case "tuesday" :
+                    console.log("today is tuesday")
+                    break
+                    default:
+                        console.log("today is neither monday nor tuesday")
+
+            }
+
+            //for loop
+            for(i=0;i<=7;i++)
+            console.log(i)
+
+            //for/in 
+            const details ={ company_name : "Ultimez", course:"js"}
+            for (const key in details){
+                console.log(key +": "+ details [key])
+
+             }
+
+             //for/of
+
+             const colors= ["Purple","Red" ,"green" ,"blue"]
+             for(const eachColor of colors)
+             {
+                console.log(eachColor)
+             }
+             //while loop
+             let count=0;
+             while (count<3) {
+                console.log(count)
+                count++
+             }
+
+             //do while
+             let num5= 0
+             do{
+                console.log(num5)
+                num5++
+               }
+                while(num5 <4)
+
+
+        }
+        
+        
+
+
+    </script>
+    
+
+</body></html>
