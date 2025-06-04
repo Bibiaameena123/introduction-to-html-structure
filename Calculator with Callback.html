@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///E:/aameenaUjs/taskon%20functn.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Calculator with Callback</title>
+</head>
+<body>
+  <h2>Calculator with Callback Function</h2>
+
+  <p>Open the console to see the result.</p>
+
+  <script>
+    // Define the calculate function
+    function calculate(num1, num2, operation, callback) {
+      let result;
+
+      switch (operation) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          result = num2 !== 0 ? num1 / num2 : 'Error: Divide by zero';
+          break;
+        default:
+          result = 'Invalid operation';
+      }
+
+      // Call the callback function with result
+      callback(result);
+    }
+
+    // Example usage
+    calculate(10, 5, '+', function(result) {
+      console.log("Result:", result);
+    });
+
+    calculate(10, 0, '/', function(result) {
+      console.log("Result:", result);
+    });
+  </script>
+
+
+</body></html>
