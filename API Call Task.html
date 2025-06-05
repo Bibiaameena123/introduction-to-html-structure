@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)file:///E:/aameenaUjs/taskonAPI.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>API Call Task</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .result { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+  <h2>API Call using Promises</h2>
+  <button onclick="callApiWithPromise()">Call API (Promise)</button>
+  <div id="promiseResult" class="result">{<br>  "userId": 1,<br>  "id": 1,<br>  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",<br>  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"<br>}</div>
+
+  <h2>API Call using Async/Await</h2>
+  <button onclick="callApiWithAsync()">Call API (Async/Await)</button>
+  <div id="asyncResult" class="result">{<br>  "userId": 1,<br>  "id": 1,<br>  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",<br>  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"<br>}</div>
+
+  <script>
+    const apiURL = 'https://jsonplaceholder.typicode.com/posts/1';
+
+    // 1. Using Promises
+    function callApiWithPromise() {
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('promiseResult').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          document.getElementById('promiseResult').innerText = 'Error: ' + error;
+        });
+    }
+
+    // 2. Using Async/Await
+    async function callApiWithAsync() {
+      try {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+        document.getElementById('asyncResult').innerText = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('asyncResult').innerText = 'Error: ' + error;
+      }
+    }
+  </script>
+
+
+</body></html>
